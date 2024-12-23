@@ -4,35 +4,30 @@ Arduino Nano Project to receive and send can-bus messages at the mid-speed of a 
 
 Milestones
 
-  Analysing CAN-Messages
-  
-  Verify that TID, GID and CID communication use similar protocol
-  
-  Send a constant message via CAN to Display
-  
-  Request temperature via CAN
-  
-  Send dynamic messages to Display
+	  Analysing CAN-Messages
+	  
+	  Verify that TID, GID and CID communication use similar protocol
+	  
+	  Send a constant message via CAN to Display
+	  
+	  Request temperature via CAN
+	  
+	  Send dynamic messages to Display
 
 
 Development Hardware:
 
-  Opel Corsa D
-
-  Arduino Uno/Nano 
-
-	MCP2515 (8Mhz) 
-
-	for 95.238 communication 
-  o	Register CFG1 (0x01)
-  o	Register CFG2 (0XBB)
-  o	Register CFG3 (0X07)
+	  Opel Corsa D
+	
+	  Arduino Uno/Nano 
+	
+	  MCP2515 (8Mhz) for 95.238 communication | Register CFG1 (0x01) | Register CFG2 (0XBB) | Register CFG3 (0X07)
 
 
 Thanks to the following projects:
 
-  SeppHansen/SLSS-CANAnalyser 
-  
-  megadrifter/Opel-Astra-H
- 
-  PNKP237/EHU32
+	  SeppHansen/SLSS-CANAnalyser 
+	  
+	  megadrifter/Opel-Astra-H
+	 
+	  PNKP237/EHU32
