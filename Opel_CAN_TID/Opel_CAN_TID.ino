@@ -250,13 +250,15 @@ void msgBuilder(){
     #else
       DEBUG_PRINTLN("Baue die Nachricht");
       // -- Schriftgröße und Ausrichtung
-      //char* bausteina = 0x1B;
-      //char* bausteinb = "[fS_gm";
+      //char esc[0];
+      //esc[0] = 0x1b;
+      //char right_alignm = "[fS_gm";
+     
       
       //Message constants
-      char combinedText[50]={0};                            //Buffer for message text
-      char* baustein1 = "Twasser: ";                        //First part of the message text
-      char* baustein2 = "°C";                               //Last part of the message text
+      char combinedText[50]={0};                           //Buffer for message text
+      char* baustein1 = "Wasser: ";                        //First part of the message text
+      char* baustein2 = "°C";                              //Last part of the message text
       //Message variable
       if (coolantTemp >= 20) {
         textvar = String(coolantTemp);
@@ -266,7 +268,9 @@ void msgBuilder(){
       }
 
       //Build the message text
-      strcpy(combinedText, baustein1);                      
+      strcpy(combinedText, baustein1);
+      //strcat(combinedText, esc);
+      //strcat(combinedText, right_alignm);                      
       strcat(combinedText, textvar.c_str());                
       strcat(combinedText, baustein2);
       DEBUG_PRINTLN(combinedText);
@@ -355,7 +359,7 @@ void clearMsgArray(Array2D& msgArray){
 }
 
 // Filters ASCII values for invalid or special characters
-void asciiFilter(unsigned char asciiValue){
+void asciiFilter(unsigned char &asciiValue){
   if (asciiValue < 128) {                   
     return asciiValue;                      // Standard ASCII values remain unchanged
   } 
